@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz: Die missbrauchten Liebesbriefe</title>
+  <style>
+    :root {
+      --bg:#f4eadf; --paper:#fffaf4; --ink:#2c211c; --muted:#6f6258;
+      --accent:#7e2d2d; --accent2:#b86b57; --soft:#ead6ce; --line:#ddc9bd;
+      --good:#23764d; --bad:#a8322b;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; font-family:Georgia,"Times New Roman",serif;
+      background:linear-gradient(180deg,var(--bg),#ead8ca);
+      color:var(--ink); line-height:1.6;
+    }
+    header { background:#39221f; color:#fff8ef; text-align:center; padding:48px 18px 34px; }
+    header h1 { margin:0; font-size:clamp(2rem,5vw,3.3rem); }
+    header p { max-width:800px; margin:12px auto 0; color:#eadbd1; font-size:1.08rem; }
+    main { max-width:1080px; margin:0 auto; padding:28px 18px 64px; }
+    h2 { margin-top:36px; color:var(--accent); font-size:1.65rem; }
+    .intro,.card {
+      background:var(--paper); border:1px solid var(--line); border-radius:18px;
+      padding:22px; box-shadow:0 12px 28px rgba(49,31,27,.08);
+    }
+    .letters { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; align-items:start; }
+    .letter h3,.card h3 { margin-top:0; color:var(--accent); }
+    .letter-text { white-space:pre-wrap; font-size:1.02rem; line-height:1.55; }
+    .hint { color:var(--muted); font-size:.96rem; }
+    .question { margin-bottom:18px; }
+    label {
+      display:block; margin:8px 0; padding:10px 12px; border:1px solid var(--line);
+      border-radius:12px; background:#fffdf9; cursor:pointer;
+    }
+    label:hover { background:var(--soft); }
+    input[type="radio"] { margin-right:8px; }
+    button {
+      border:0; border-radius:999px; padding:12px 18px; background:var(--accent);
+      color:white; font-weight:700; font-family:Arial,sans-serif; cursor:pointer; margin:8px 8px 8px 0;
+    }
+    button.secondary { background:var(--muted); }
+    textarea {
+      width:100%; min-height:180px; padding:15px; border:1px solid var(--line); border-radius:14px;
+      font-family:Georgia,"Times New Roman",serif; font-size:1rem; line-height:1.55; background:#fffdf9;
+      resize:vertical;
+    }
+    .result {
+      display:none; margin-top:18px; padding:16px; border-radius:14px;
+      border:1px solid var(--line); background:#fffdf9; font-family:Arial,sans-serif;
+    }
+    .correct { color:var(--good); font-weight:700; }
+    .wrong { color:var(--bad); font-weight:700; }
+    .solution {
+      display:none; white-space:pre-wrap; background:#fffdf9; border:1px solid var(--line);
+      border-left:6px solid var(--accent2); border-radius:14px; padding:16px; margin-top:12px;
+    }
+    footer { text-align:center; color:var(--muted); padding:28px 18px; font-size:.9rem; }
+    @media (max-width:820px) { .letters { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Die missbrauchten Liebesbriefe</h1>
+  <p>Ein interaktives Quiz zum Vergleich von Viggis Brief und einer möglichen Antwort Wilhelms.</p>
+</header>
+
+<main>
+  <section class="intro">
+    <h2 style="margin-top:0;">Worum geht es?</h2>
+    <p>Vergleiche die beiden Briefe. Achte besonders darauf, wie sich Sprache, Motive und Figuren unterscheiden. Beide Briefe wirken poetisch, aber sie entstehen aus ganz unterschiedlichen Beweggründen.</p>
+  </section>
+
+  <h2>1. Die beiden Briefe</h2>
+  <section class="letters">
+    <article class="card letter">
+      <h3>Brief von Viggi</h3>
+      <div class="letter-text">Teuerste Freundin meiner Seele!
+
+Wenn sich zwei Sterne küssen, so gehen zwei Welten unter! Vier rosige Lippen erstarren, zwischen deren Kuß ein Gifttropfen fällt! Aber dieses Erstarren und jener Untergang sind Seligkeit und ihr Augenblick wiegt Ewigkeiten auf. Wohl hab ich&#x27;s bedacht und hab es bedacht und finde meines Denkens kein Ende: – Warum ist Trennung? – ? - Nur eines weiß ich dieser furchtbaren Frage entgegenzusetzen und schleudere das Wort in die Waagschale: Die Glut meines Liebeswillens ist stärker als Trennung, und wäre diese die Urverneinung selbst – - solange dies Herz schlägt, ist das Universum noch nicht um die Urbejahung gekommen!! Geliebte! fern von Dir umfängt mich Dunkelheit – ich bin herzlich müde! Einsam such ich mein Lager – - schlaf wohl! - -</div>
+    </article>
+    <article class="card letter">
+      <h3>Meine Version von Wilhelms Brief</h3>
+      <div class="letter-text">Teuerste Freundin meines Herzens!
+
+Seit Euer Brief in meine Hände fiel, ist mir, als hätte jemand ein verborgenes Licht in meiner Brust entzündet, ein Licht, das mich in der Kälte der Sehnsucht nach Euch wärmt.
+Die Trennung erscheint mir wie ein feiner Schleier, den das Schicksal zwischen zwei Herzen zieht. Er verbirgt den geliebten Menschen vor unseren Augen, vermag ihn aber nicht aus unseren Gedanken zu ziehen.
+In jeder Sekunde der Trennung wünsche ich mir nichts sehnlicher als die kleinen Zeichen Eurer Gegenwart. Die Wärme Eurer Nähe oder jene stillen Augenblicke, in denen zwei Herzen einander wortlos verstehen.
+Ich will die Trennung als jene wunderliche Macht betrachten, welche die Herzen voneinander entfernt, sie jedoch lehrt, einander umso höher zu schätzen.
+Und obgleich mich die Ferne mit einer Traurigkeit erfüllt, so finde ich doch Trost in dem Gedanken, dass für euch dieselbe Sonne den Tag erhellt und derselbe Mond in eure Fenster scheint.
+
+Möge dieser Brief Euch erreichen, wie meine Gedanken es täglich tun.
+
+Euer Wilhelm</div>
+    </article>
+  </section>
+
+  <h2>2. Multiple-Choice-Quiz</h2>
+  <section id="quiz">
+    <article class="card question" data-correct="1" data-feedback="Beide Briefe sind poetisch. Der Unterschied liegt darin, dass Wilhelm die Bilder stärker mit echter Sehnsucht und Gritlis konkreter Gegenwart verbindet.">
+<h3>1. Was ist der grösste Unterschied zwischen den beiden Briefen?</h3>
+<label><input type="radio" name="q1" value="0"> <strong>A)</strong> Wilhelm schreibt deutlich zurückhaltender und weniger leidenschaftlich als Viggi.</label>
+<label><input type="radio" name="q1" value="1"> <strong>B)</strong> Beide verwenden poetische Bilder, doch Wilhelm richtet den Fokus stärker auf die konkrete Person und seine Gefühle für sie.</label>
+<label><input type="radio" name="q1" value="2"> <strong>C)</strong> Viggi schreibt hauptsächlich über seine Gefühle, Wilhelm hauptsächlich über philosophische Gedanken.</label>
+<label><input type="radio" name="q1" value="3"> <strong>D)</strong> Wilhelm versucht bewusst, einen völlig anderen Stil als Viggi zu verwenden.</label>
+<p id="feedback-1" class="hint"></p></article><article class="card question" data-correct="2" data-feedback="Viggi benutzt grosse Begriffe und Bilder. Dadurch wirkt er wie jemand, der sich selbst als romantischen Dichter inszenieren möchte.">
+<h3>2. Was verrät Viggis Brief über seinen Charakter?</h3>
+<label><input type="radio" name="q2" value="0"> <strong>A)</strong> Er möchte vor allem ehrlich über seine Gefühle sprechen.</label>
+<label><input type="radio" name="q2" value="1"> <strong>B)</strong> Er wirkt selbstkritisch und bescheiden.</label>
+<label><input type="radio" name="q2" value="2"> <strong>C)</strong> Er liebt grosse Worte und die Vorstellung von sich als Dichter.</label>
+<label><input type="radio" name="q2" value="3"> <strong>D)</strong> Er interessiert sich wenig für Literatur.</label>
+<p id="feedback-2" class="hint"></p></article><article class="card question" data-correct="0" data-feedback="Wilhelm merkt durch die Trennung, wie sehr er Gritlis Nähe, Gegenwart und kleine Zeichen ihrer Zuneigung vermisst.">
+<h3>3. Welche Bedeutung hat die Trennung für Wilhelm?</h3>
+<label><input type="radio" name="q3" value="0"> <strong>A)</strong> Sie macht ihm bewusst, wie wichtig ihm Gritlis Nähe ist.</label>
+<label><input type="radio" name="q3" value="1"> <strong>B)</strong> Sie zeigt, dass Liebe nur durch Entfernung entstehen kann.</label>
+<label><input type="radio" name="q3" value="2"> <strong>C)</strong> Sie inspiriert ihn nur zu poetischen Bildern.</label>
+<label><input type="radio" name="q3" value="3"> <strong>D)</strong> Sie dient als Beweis dafür, dass Liebe immer Leid bedeutet.</label>
+<p id="feedback-3" class="hint"></p></article><article class="card question" data-correct="1" data-feedback="Wilhelms Briefe wirken trotz poetischer Sprache echter. Seine Gefühle stehen nicht im Dienst eines Projekts, sondern entstehen aus wirklicher Sehnsucht.">
+<h3>4. Warum wirken Wilhelms Briefe auf Gritli stärker als diejenigen von Viggi?</h3>
+<label><input type="radio" name="q4" value="0"> <strong>A)</strong> Sie bevorzugt grundsätzlich einfache Sprache gegenüber poetischer Sprache.</label>
+<label><input type="radio" name="q4" value="1"> <strong>B)</strong> Sie reagiert stärker auf Ehrlichkeit und echte Zuneigung als auf grosse Worte.</label>
+<label><input type="radio" name="q4" value="2"> <strong>C)</strong> Sie interessiert sich hauptsächlich für die literarische Qualität der Briefe.</label>
+<label><input type="radio" name="q4" value="3"> <strong>D)</strong> Sie erkennt sofort, welcher Mann welchen Brief geschrieben hat.</label>
+<p id="feedback-4" class="hint"></p></article><article class="card question" data-correct="1" data-feedback="Viggi liebt weniger die konkrete Gritli als die Idee einer poetischen, literarisch erhöhten Liebe, in der er selbst als Dichter auftreten kann.">
+<h3>5. Welcher Aussage würdest du eher zustimmen?</h3>
+<label><input type="radio" name="q5" value="0"> <strong>A)</strong> Viggi liebt hauptsächlich Gritli als Person.</label>
+<label><input type="radio" name="q5" value="1"> <strong>B)</strong> Viggi liebt vor allem die Vorstellung einer romantischen Liebe.</label>
+<label><input type="radio" name="q5" value="2"> <strong>C)</strong> Viggi interessiert sich nur für Geld.</label>
+<label><input type="radio" name="q5" value="3"> <strong>D)</strong> Viggi möchte eigentlich keine Briefe schreiben.</label>
+<p id="feedback-5" class="hint"></p></article><article class="card question" data-correct="2" data-feedback="Viggi und Wilhelm verwenden beide eine poetische Sprache. Trotzdem unterscheiden sich ihre Motive: Viggi inszeniert sich, Wilhelm fühlt sich wirklich geliebt.">
+<h3>6. Was zeigt der Vergleich der beiden Briefe über Sprache und Liebe?</h3>
+<label><input type="radio" name="q6" value="0"> <strong>A)</strong> Schöne Sprache garantiert echte Gefühle.</label>
+<label><input type="radio" name="q6" value="1"> <strong>B)</strong> Wahre Gefühle brauchen keine Worte.</label>
+<label><input type="radio" name="q6" value="2"> <strong>C)</strong> Zwei Menschen können eine ähnliche Sprache verwenden und dennoch aus völlig unterschiedlichen Motiven schreiben.</label>
+<label><input type="radio" name="q6" value="3"> <strong>D)</strong> Liebesbriefe führen immer zu Missverständnissen.</label>
+<p id="feedback-6" class="hint"></p></article>
+  </section>
+  <button onclick="checkQuiz()">Quiz auswerten</button>
+  <button class="secondary" onclick="resetQuiz()">Zurücksetzen</button>
+  <div id="result" class="result"></div>
+
+  <h2>3. Vertiefungsfrage</h2>
+  <section class="card">
+    <h3>Inwiefern wurden die Briefe missbraucht?</h3>
+    <p>Erkläre, weshalb der Titel <em>Die missbrauchten Liebesbriefe</em> passend ist. Beziehe dich dabei auf Gritli, Viggi und Wilhelm.</p>
+    <textarea id="reflection" placeholder="Schreibe hier deine Antwort..."></textarea><br>
+    <button onclick="toggleSolution()">Mögliche Lösung anzeigen / ausblenden</button>
+    <button class="secondary" onclick="saveText('reflection')">Antwort speichern</button>
+    <div id="solution" class="solution">Die Briefe wurden von Gritli missbraucht, weil sie die Briefe von Viggi an Wilhelm weitergegeben und die Briefe von Wilhelm wiederum an Viggi geschickt hat. Dadurch wurden die Briefe an die falschen Personen weitergeleitet und für eine Täuschung benutzt.
+
+Auch Viggi missbrauchte die Liebesbriefe, weil er sie nicht nur als private Liebesbriefe verstand, sondern als literarisches Projekt. Er wollte Gritli bilden, sie zu seiner Muse machen und den Briefwechsel später vielleicht sogar veröffentlichen.
+
+Wilhelm missbrauchte die Liebesbriefe nicht.</div>
+  </section>
+
+  <h2>4. Kreativaufgabe</h2>
+  <section class="card">
+    <h3>Schreibe deine eigene Version von Wilhelms Antwortbrief</h3>
+    <p>Stelle dir vor, Wilhelm liest Viggis ersten Brief, hält ihn aber für einen Brief von Gritli. Schreibe nun seine Antwort. Versuche, dich am gehobenen, romantischen Stil zu orientieren, aber trotzdem Wilhelms echte Gefühle sichtbar zu machen.</p>
+    <textarea id="creative" placeholder="Beginne zum Beispiel mit: Teuerste Freundin meines Herzens!"></textarea><br>
+    <button onclick="saveText('creative')">Brief speichern</button>
+    <button class="secondary" onclick="clearText('creative')">Brief löschen</button>
+    <p id="saveNotice" class="hint"></p>
+  </section>
+</main>
+
+<footer>Statische HTML-Datei für GitHub Pages.</footer>
+
+<script>
+function checkQuiz() {
+  const questions = document.querySelectorAll(".question");
+  let score = 0;
+  questions.forEach((q, index) => {
+    const correct = Number(q.dataset.correct);
+    const feedback = q.dataset.feedback;
+    const selected = q.querySelector("input[type='radio']:checked");
+    const feedbackEl = document.getElementById("feedback-" + (index + 1));
+    if (!selected) {
+      feedbackEl.innerHTML = "<span class='wrong'>Nicht beantwortet.</span> " + feedback;
+    } else if (Number(selected.value) === correct) {
+      score++;
+      feedbackEl.innerHTML = "<span class='correct'>Richtig.</span> " + feedback;
+    } else {
+      feedbackEl.innerHTML = "<span class='wrong'>Falsch.</span> " + feedback;
+    }
+  });
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.innerHTML = "<strong>Ergebnis:</strong> Du hast " + score + " von " + questions.length + " Punkten erreicht.";
+  result.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+function resetQuiz() {
+  document.querySelectorAll("input[type='radio']").forEach(input => input.checked = false);
+  document.querySelectorAll(".question .hint").forEach(p => p.textContent = "");
+  document.getElementById("result").style.display = "none";
+}
+
+function toggleSolution() {
+  const s = document.getElementById("solution");
+  s.style.display = s.style.display === "block" ? "none" : "block";
+}
+
+function saveText(id) {
+  localStorage.setItem("mlb_" + id, document.getElementById(id).value);
+  document.getElementById("saveNotice").textContent = "Dein Text wurde in diesem Browser gespeichert.";
+}
+
+function clearText(id) {
+  localStorage.removeItem("mlb_" + id);
+  document.getElementById(id).value = "";
+  document.getElementById("saveNotice").textContent = "Der Text wurde gelöscht.";
+}
+
+window.addEventListener("load", () => {
+  ["reflection","creative"].forEach(id => {
+    const saved = localStorage.getItem("mlb_" + id);
+    if (saved) document.getElementById(id).value = saved;
+  });
+});
+</script>
+</body>
+</html>
